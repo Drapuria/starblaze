@@ -1,0 +1,20 @@
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  data:
+    mongodb:
+      database: "central-logging"
+      port: 27017
+      host: "localhost"
+logging:
+  timezone: "Europe/Berlin"
+  level:
+    org.springframework: DEBUG
+management:
+  tracing:
+    sampling:
+      probability: 1.0
