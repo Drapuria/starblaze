@@ -2,7 +2,6 @@ package net.drapuria.starblaze.logging.controller;
 
 import net.drapuria.starblaze.logging.dto.LogMessageDto;
 import net.drapuria.starblaze.logging.service.LogService;
-import net.drapuria.starblaze.logging.service.LogServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

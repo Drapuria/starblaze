@@ -1,13 +1,11 @@
 package net.drapuria.starblaze.logging.configuration;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import jakarta.annotation.PostConstruct;
 import net.drapuria.starblaze.logging.deserializer.InstantMillisSerializer;
 import net.drapuria.starblaze.logging.deserializer.MillisInstantDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;

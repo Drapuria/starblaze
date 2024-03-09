@@ -1,7 +1,6 @@
 package net.drapuria.starblaze.logger.configuration;
 
 import lombok.Builder;
-import lombok.NonNull;
 
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
