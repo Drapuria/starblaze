@@ -10,3 +10,11 @@ spring:
       database: "central-logging"
       port: 27017
       host: "localhost"
+logging:
+  timezone: "Europe/Berlin"
+  level:
+    org.springframework: DEBUG
+management:
+  tracing:
+    sampling:
+      probability: 1.0
