@@ -8,6 +8,7 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+@SuppressWarnings("unused")
 public final class StarblazeLogger {
 
     private final Configuration configuration;
@@ -21,6 +22,8 @@ public final class StarblazeLogger {
         if (this.configuration.isOverrideDefaultLogging()) {
             LogManager.getLogManager().reset();
         }
+        StarblazeLoggingHandler handler = new StarblazeLoggingHandler(this.configuration);
+        Runtime.getRuntime().addShutdownHook(new ShutdownHandler(handler));
         if (this.configuration.isOverrideDefaultLogging()) {
             Logger rootLogger = this.configuration.getParentLogger();
             rootLogger.setLevel(this.configuration.getLogLevel());
@@ -30,13 +33,13 @@ public final class StarblazeLogger {
                 consoleHandler.setLevel(this.configuration.getLogLevel());
                 rootLogger.addHandler(consoleHandler);
             }
-            rootLogger.addHandler(new StarblazeLoggingHandler(this.configuration));
+            rootLogger.addHandler(handler);
             return;
         }
-        Logger.getGlobal().addHandler(new StarblazeLoggingHandler(this.configuration));
-        Runtime.getRuntime().addShutdownHook(new ShutdownHandler());
+        Logger.getGlobal().addHandler(handler);
     }
 
+    @SuppressWarnings("unused")
     public static StarblazeLogger setup(Configuration configuration) {
         return new StarblazeLogger(configuration);
     }

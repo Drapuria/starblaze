@@ -8,11 +8,11 @@ import java.util.List;
 @Data
 public class LogDto {
 
-    @JsonProperty(required = false)
+    @JsonProperty()
     private Long id;
-    @JsonProperty(required = false)
+    @JsonProperty()
     private String softwareName;
-    @JsonProperty(required = false)
+    @JsonProperty()
     private List<LogMessageDto> messages;
 
 }

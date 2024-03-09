@@ -27,10 +27,4 @@ public class LogEntry {
     private Instant timestamp;
     private Log log;
 
-    public LogEntry(String level, String message, Instant timestamp, Log log) {
-        this.level = level;
-        this.message = message;
-        this.timestamp = timestamp;
-        this.log = log;
-    }
 }

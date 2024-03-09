@@ -1,7 +1,6 @@
 package net.drapuria.starblaze.logging.repository;
 
 import net.drapuria.starblaze.logging.model.Log;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

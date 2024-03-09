@@ -34,7 +34,13 @@ public class LogRecordPublisher  {
             this.ownExecutorService = false;
             this.executorService = configuration.getExecutorService();
         }
-        this.scheduledFuture = this.executorService.scheduleWithFixedDelay(this::publishAll, 5, 10, TimeUnit.SECONDS);
+        this.scheduledFuture = this.executorService.scheduleWithFixedDelay(() -> {
+            try {
+                this.publish();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }, 5, 10, TimeUnit.SECONDS);
         this.apiUrl = new URL(configuration.getApiUrl());
     }
 

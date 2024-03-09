@@ -34,7 +34,7 @@ public class LogRecordQueue {
     public List<LogRecord> removeAll(int amount) {
         List<LogRecord> records = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
-            LogRecord record = queue.poll();
+            LogRecord record = this.poll();
             if (record != null) {
                 records.add(record);
             } else if (queue.isEmpty()) {

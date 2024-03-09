@@ -1,6 +1,5 @@
 package net.drapuria.starblaze.logging.listener;
 
-import net.drapuria.starblaze.logging.model.Log;
 import net.drapuria.starblaze.logging.model.LogEntry;
 import net.drapuria.starblaze.logging.service.LogServiceImpl;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
