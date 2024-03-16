@@ -4,6 +4,6 @@ services:
   mongo:
     image: mongo:4.0
     container_name: mongo
-    restart: always
+    restart: no
     ports:
       - "27017:27017"
